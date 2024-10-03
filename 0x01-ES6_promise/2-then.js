@@ -1,9 +1,7 @@
 export default function getFullResponseFromAPI(promise) {
   return promise.then(() => ({
     status: 200, body: 'success',
-  })).catch((error) => {
-    error();
-  }).finally(() => {
+  })).catch(() => new Error()).finally(() => {
     console.log('Got a response from the API');
   });
 }
