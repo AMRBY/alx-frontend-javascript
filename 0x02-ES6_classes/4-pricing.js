@@ -36,7 +36,7 @@ export default class Pricing {
   }
 
   /* eslint-disable class-methods-use-this */
-  convertPrice(amount, conversionRate) {
+  static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
   }
 }
