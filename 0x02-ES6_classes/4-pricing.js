@@ -16,7 +16,7 @@ export default class Pricing {
   }
 
   set amount(value) {
-    if (typeof (value) === 'number') {
+    if (typeof (value) === 'number' && !value.isNaN) {
       this._amount = value;
       return this._amount;
     }
