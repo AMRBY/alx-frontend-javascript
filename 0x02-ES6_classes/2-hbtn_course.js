@@ -27,7 +27,7 @@ export default class HolbertonCourse {
   }
 
   set length(value) {
-    if (typeof (value) === 'number') {
+    if (typeof (value) === 'number' && !value.isNaN) {
       this._length = value;
       return this._length;
     }
