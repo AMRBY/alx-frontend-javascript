@@ -29,7 +29,7 @@ export default class Airport {
     throw TypeError('Code must be a string');
   }
 
-  toString() {
-    return `object [${this._code}]`;
+  get [Symbol.toStringTag]() {
+    return `${this._code}`;
   }
 }
