@@ -34,4 +34,9 @@ export default class Pricing {
   displayFullPrice() {
     return `${this._amount} ${this._currency.displayFullCurrency()}`;
   }
+
+  /* eslint-disable class-methods-use-this */
+  convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
+  }
 }
