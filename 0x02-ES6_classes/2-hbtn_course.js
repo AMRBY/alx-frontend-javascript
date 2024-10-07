@@ -27,18 +27,23 @@ export default class HolbertonCourse {
   }
 
   set length(value) {
-    if (typeof (value) === 'number' && !value.isNaN) {
+    if (typeof (value) === 'number') {
       this._length = value;
       return this._length;
     }
     throw TypeError('Length must be a number');
   }
 
-  set students(value) {
-    if (typeof (value) === 'object') {
-      this._students = value;
+  set students(values) {
+    if (typeof (values) === 'object') {
+      for (const value in values) {
+        if (typeof (value) !== 'string') {
+          throw TypeError('Students must be an array of strings');
+        }
+      }
+      this._students = values;
       return this._students;
     }
-    throw TypeError('Students must be an array');
+    throw TypeError('Students must be an array of strings');
   }
 }
