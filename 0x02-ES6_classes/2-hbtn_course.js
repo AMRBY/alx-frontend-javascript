@@ -1,9 +1,9 @@
 /* eslint no-underscore-dangle: 0 */
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
   get name() {
@@ -21,29 +21,29 @@ export default class HolbertonCourse {
   set name(value) {
     if (typeof (value) === 'string') {
       this._name = value;
-      return this._name;
+    } else {
+      throw TypeError('Name must be a string');
     }
-    throw TypeError('Name must be a string');
   }
 
   set length(value) {
     if (typeof (value) === 'number') {
       this._length = value;
-      return this._length;
+    } else {
+      throw TypeError('Length must be a number');
     }
-    throw TypeError('Length must be a number');
   }
 
   set students(values) {
-    if (typeof (values) === 'object') {
+    if (typeof values === 'object') {
       for (const value in values) {
-        if (typeof (value) !== 'string') {
-          throw TypeError('Students must be an array of strings');
-        }
+        if (typeof value !== 'string') {
+          throw new TypeError('Students must be an array of strings');
+        } 
       }
-      this._students = values;
-      return this._students;
+    } else {
+      throw new TypeError('Students must be an array of strings');
     }
-    throw TypeError('Students must be an array of strings');
+    this._students = values;
   }
 }
