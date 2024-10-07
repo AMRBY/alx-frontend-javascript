@@ -39,7 +39,7 @@ export default class HolbertonCourse {
       for (const value in values) {
         if (typeof value !== 'string') {
           throw new TypeError('Students must be an array of strings');
-        } 
+        }
       }
     } else {
       throw new TypeError('Students must be an array of strings');
