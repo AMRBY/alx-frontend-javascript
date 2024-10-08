@@ -6,7 +6,7 @@ export default function updateStudentGradeByCity(array, city, grades) {
     if (gradeById.length !== 0) {
       element.grade = gradeById[0].grade;
     } else {
-      element.grad = 'N/A';
+      element.grade = 'N/A';
     }
     return element;
   });
