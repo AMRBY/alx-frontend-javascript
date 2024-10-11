@@ -31,6 +31,18 @@ function executeWork(employee) {
         console.log(employee.workTeacherTasks());
     }
 }
+function teachClass(todayClass) {
+    if (todayClass === 'Math') {
+        console.log('Teaching Math');
+    }
+    else {
+        console.log('Teaching History');
+    }
+}
+teachClass('Math');
+//Teaching Math
+teachClass('History');
+//Teaching History
 executeWork(createEmployee(200));
 //Getting to work
 executeWork(createEmployee(1000));

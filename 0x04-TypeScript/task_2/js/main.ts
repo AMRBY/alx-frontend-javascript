@@ -36,6 +36,20 @@ function executeWork(employee){
   }
 }
 
+type Subjects = 'Math' | 'History';
+function teachClass(todayClass: string) {
+  if (todayClass === 'Math') {
+    console.log('Teaching Math');
+  } else {
+  console.log('Teaching History');
+  }
+}
+
+teachClass('Math');
+//Teaching Math
+teachClass('History');
+//Teaching History
+
 executeWork(createEmployee(200));
 //Getting to work
 executeWork(createEmployee(1000));
