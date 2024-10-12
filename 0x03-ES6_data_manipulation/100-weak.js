@@ -4,11 +4,10 @@ export function queryAPI(endpoint) {
     weakMap.set(endpoint, 0);
   }
   let num = weakMap.get(endpoint);
+  num += 1;
+  weakMap.set(endpoint, num);
   if (num >= 5) {
     throw new Error('Endpoint load is high');
-  } else {
-    num += 1;
-    weakMap.set(endpoint, num);
-    return weakMap;
   }
+  return weakMap;
 }
