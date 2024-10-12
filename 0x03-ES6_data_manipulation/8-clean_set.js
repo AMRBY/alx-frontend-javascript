@@ -1,22 +1,12 @@
-
-const cleanSet = (set, startString) => {
-  const str = [];
-
-  if (
-    typeof set !== 'object'
-    || typeof startString !== 'string'
-    || startString.length === 0
-  ) {
-    return '';
-  }
-
-  for (const item of set) {
-    if (item && item.startsWith(startString)) {
-      str.push(item.slice(startString.length));
+export default function cleanSet(set, startString) {
+  const len = startString.length;
+  let values = '';
+  if (len !== 0) {
+    for (const value of set) {
+      if (startString === value.slice(0, len)) {
+        values += value.slice(len, value.length).concat('-');
+      }
     }
   }
-
-  return str.join('-');
-};
-
-export default cleanSet;
+  return values.slice(0, values.length - 1);
+}
